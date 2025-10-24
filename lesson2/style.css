@@ -1,0 +1,47 @@
+/* body全体の背景色を指定 */
+body {
+    background-color: #ffc0cb; /* 指定のピンク色 */
+}
+
+/* コンテナの設定：Flexboxと折り返し */
+.container {
+    display: flex;         /* 子要素をFlexアイテムにする */
+    flex-wrap: wrap;       /* 幅が足りなくなったら次の行に折り返す */
+    max-width: 900px;      /* 全体の最大幅を設定 (任意) */
+    margin: 20px auto;     /* コンテナを中央に配置 */
+}
+
+/* 各アイテムの設定：幅とスタイル */
+.item {
+    /* 2列表示にするために、幅を49%に設定 */
+    width: 49%; 
+    margin: 0.5%;          /* 左右と上下にわずかなスペースを作成 */
+    
+    /* 添付画像のような見た目を再現するためのスタイル */
+    background-color: #90EE90; /* 明るい緑色 (アイテムの背景) */
+    box-sizing: border-box; /* paddingとborderを幅に含める */
+    padding: 10px;
+}
+
+/* タイトルの設定：文字色を指定 */
+.title {
+    color: #800000;       /* 指定の赤茶色 */
+    font-size: 1.5em;
+    margin: 0 0 5px 0;
+    padding: 10px 0;
+    text-align: center; /* 中央寄せ */
+}
+
+/* 画像の設定：アイテムの幅に合わせる */
+.item img {
+    width: 100%;           /* 親要素 (.item) の幅いっぱいに広げる */
+    height: auto;          /* 縦横比を維持 */
+    display: block;        /* 画像下の余白を削除 */
+}
+
+/* 説明文の設定 */
+.description {
+    font-size: 1em;
+    padding: 5px 10px;
+    text-align: left; /* 左寄せ */
+}
