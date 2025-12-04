@@ -1,0 +1,76 @@
+/* 基本的なリセットとフォント設定 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ヘッダーのスタイル */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-top: 0;
+}
+
+/* メインコンテンツのコンテナ */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    /* Flexboxを有効にして、子要素を並べる */
+    display: flex;
+    flex-wrap: wrap; /* 要素が収まらない場合に折り返す */
+    gap: 20px; /* 要素間のスペース */
+}
+
+/* 各セクション（アイテム）のスタイル */
+.item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* デフォルトの幅：広い画面では均等に並ぶように設定 */
+    flex: 1 1 300px; /* 成長/縮小/基本幅 */
+    min-width: 300px; /* 最小幅を確保 */
+}
+
+/* フッターのスタイル */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed; /* 画面下部に固定 */
+    bottom: 0;
+    width: 100%;
+}
+
+/* --- メディアクエリ（レスポンシブ設定） --- */
+
+/* 画面幅が600px以下の場合のスタイル（スマートフォン向け） */
+@media (max-width: 600px) {
+    /* コンテナ内のセクションを縦に並べる（flex-direction: column;でもOKだが、flex-basisを100%にすることで対応） */
+    .container {
+        flex-direction: column;
+    }
+
+    .item {
+        /* スマートフォンサイズでは幅を100%にする */
+        flex-basis: 100%;
+        min-width: unset; /* 最小幅の制約を解除 */
+    }
+    
+    /* フッターの固定を解除し、コンテンツの後に表示させる */
+    footer {
+        position: static;
+        margin-top: 20px;
+    }
+}
