@@ -1,0 +1,123 @@
+/* --- 全体の設定 --- */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Georgia', serif;
+    margin: 0;
+}
+
+/* --- メインコンテンツの装飾 --- */
+.main-content {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* タイトルのスタイル */
+.main-content h1 {
+    color: #A52A2A;
+    font-weight: bold;
+    border-bottom: 4px solid #38761D;
+    display: flex;
+    padding-bottom: 10px;
+    margin-bottom: 1.5rem;
+}
+
+/* タイトル横の小さなGIF（pizza.gif） */
+.small-pizza-gif {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* メインの巨大画像（abc.jpg）のスタイル */
+.main-img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 8px solid #fff;
+}
+
+.ahijo-caption {
+    margin-top: 1rem;
+    color: #666;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/* --- ドロップダウンメニュー --- */
+.ddmenu-container {
+    background-color: #A52A2A;
+}
+
+.ddmenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.ddmenu li {
+    position: relative;
+}
+
+.ddmenu a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.ddmenu a:hover {
+    background-color: #38761D;
+}
+
+.ddmenu ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    list-style: none;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    padding: 0;
+    z-index: 1000;
+}
+
+.ddmenu ul a {
+    color: #333;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.ddmenu ul a:hover {
+    background-color: #f8f8f8;
+    color: #A52A2A;
+}
+
+.ddmenu li:hover > ul {
+    display: block;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+    .ddmenu {
+        flex-direction: column;
+    }
+    .ddmenu ul {
+        position: static;
+        box-shadow: none;
+    }
+    .small-pizza-gif {
+        width: 35px;
+        height: 35px;
+    }
+    .main-content h1 {
+        font-size: 1.5rem;
+    }
+}
